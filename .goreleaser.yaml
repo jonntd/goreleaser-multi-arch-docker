@@ -14,6 +14,8 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
+      - windows
+      - darwin
     goarch:
       - amd64
       - arm
@@ -90,6 +92,11 @@ docker_manifests:
       - jonntd/{{ .ProjectName }}:latest-armv7
 archives:
   # https://goreleaser.com/customization/archive/
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+  
   - files:
       # Standard Release Files
       - LICENSE
