@@ -93,6 +93,7 @@ docker_manifests:
       - jonntd/{{ .ProjectName }}:latest-armv7
 archives:
   # https://goreleaser.com/customization/archive/
+  id: my-archive
   - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       - goos: windows
