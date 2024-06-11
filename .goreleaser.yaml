@@ -85,7 +85,7 @@ docker_manifests:
       - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8
       - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv6
       - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv7
-  - name_template: jonntd/{{ .ProjectName }}:latest
+  - name_template: ghcr.io/jonntd/{{ .ProjectName }}:latest
     image_templates:
       - ghcr.io/jonntd/{{ .ProjectName }}:latest-amd64
       - ghcr.io/jonntd/{{ .ProjectName }}:latest-arm64v8
