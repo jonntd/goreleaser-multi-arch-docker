@@ -84,7 +84,7 @@ docker_manifests:
       - jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8
       - jonntd/{{ .ProjectName }}:{{ .Version }}-armv6
       - jonntd/{{ .ProjectName }}:{{ .Version }}-armv7
-  - name_template: 0hlov3s/{{ .ProjectName }}:latest
+  - name_template: jonntd/{{ .ProjectName }}:latest
     image_templates:
       - jonntd/{{ .ProjectName }}:latest-amd64
       - jonntd/{{ .ProjectName }}:latest-arm64v8
