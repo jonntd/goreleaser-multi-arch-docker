@@ -31,8 +31,8 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "jonntd/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "jonntd/{{ .ProjectName }}:latest-amd64"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:latest-amd64"
     build_flag_templates:
       - "--platform=linux/amd64"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -43,8 +43,8 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8"
-      - "jonntd/{{ .ProjectName }}:latest-arm64v8"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:latest-arm64v8"
     build_flag_templates:
       - "--platform=linux/arm64/v8"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -56,8 +56,8 @@ dockers:
     goarch: arm
     goarm: 6
     image_templates:
-      - "jonntd/{{ .ProjectName }}:{{ .Version }}-armv6"
-      - "jonntd/{{ .ProjectName }}:latest-armv6"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv6"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:latest-armv6"
     build_flag_templates:
       - "--platform=linux/arm/v6"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -69,8 +69,8 @@ dockers:
     goarch: arm
     goarm: 7
     image_templates:
-      - "jonntd/{{ .ProjectName }}:{{ .Version }}-armv7"
-      - "jonntd/{{ .ProjectName }}:latest-armv7"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv7"
+      - "ghcr.io/jonntd/{{ .ProjectName }}:latest-armv7"
     build_flag_templates:
       - "--platform=linux/arm/v7"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -79,18 +79,18 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
 docker_manifests:
   # https://goreleaser.com/customization/docker_manifest/
-  - name_template: jonntd/{{ .ProjectName }}:{{ .Version }}
+  - name_template: ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}
     image_templates:
-      - jonntd/{{ .ProjectName }}:{{ .Version }}-amd64
-      - jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8
-      - jonntd/{{ .ProjectName }}:{{ .Version }}-armv6
-      - jonntd/{{ .ProjectName }}:{{ .Version }}-armv7
+      - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-amd64
+      - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-arm64v8
+      - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv6
+      - ghcr.io/jonntd/{{ .ProjectName }}:{{ .Version }}-armv7
   - name_template: jonntd/{{ .ProjectName }}:latest
     image_templates:
-      - jonntd/{{ .ProjectName }}:latest-amd64
-      - jonntd/{{ .ProjectName }}:latest-arm64v8
-      - jonntd/{{ .ProjectName }}:latest-armv6
-      - jonntd/{{ .ProjectName }}:latest-armv7
+      - ghcr.io/jonntd/{{ .ProjectName }}:latest-amd64
+      - ghcr.io/jonntd/{{ .ProjectName }}:latest-arm64v8
+      - ghcr.io/jonntd/{{ .ProjectName }}:latest-armv6
+      - ghcr.io/jonntd/{{ .ProjectName }}:latest-armv7
 archives:
   - id: helloworld_archive_1
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}_v{{ .Arm }}{{ end }}"
